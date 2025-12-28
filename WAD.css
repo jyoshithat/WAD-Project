@@ -11,7 +11,7 @@
 [data-theme="dark"] {
   --bg: #0b1120;
   --card: #111827;
-  --text: #114bfb;
+  --text: #4e7c66;
   --muted: #009dff;
   --accent: #dc2d2d;
 }
@@ -141,10 +141,14 @@ textarea {
   background: rgba(0,0,0,0.03);
   padding: 15px;
   border-radius: 12px;
+
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+
+  height: 100%;          /* IMPORTANT */
+  max-height: 520px;     /* Controls scroll height */
 }
+
 
 .entries h2 {
   margin-bottom: 10px;
@@ -152,21 +156,28 @@ textarea {
 
 /* ---------- SCROLLABLE LIST ---------- */
 .list {
+  flex: 1;               /* Fills available space */
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow-y: auto;
+  scroll-behavior: smooth;
+  overflow-y: auto;      /* ENABLE SCROLL */
   padding-right: 6px;
 }
+
 
 /* scrollbar */
 .list::-webkit-scrollbar {
   width: 6px;
 }
 .list::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    #60a5fa
+  );
 }
+
 
 /* ---------- ENTRY CARD ---------- */
 .entry {
