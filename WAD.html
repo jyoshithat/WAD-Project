@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journaling Dreams</title>
+  <link rel="stylesheet" href="WAD.css" />
+</head>
+
+<body data-theme="light">
+  <div class="app">
+
+    <header>
+      <div>
+        <h1>Journaling Dreams</h1>
+        <p class="muted">~ J.Diaries 🖤</p>
+      </div>
+
+      <div class="controls">
+        <select id="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <button id="privacyBtn" class="btn">Privacy: Off</button>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- Editor -->
+      <section class="editor">
+        <input id="title" type="text" placeholder="Title (optional)" />
+        <textarea id="content" placeholder="Write your thoughts..."></textarea>
+
+        <div class="tools">
+          <select id="mood">
+            <option value="calm">Calm</option>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="love">Love</option>
+            <option value="angry">Angry</option>
+          </select>
+
+          <input type="date" id="unlockDate" />
+
+          <button id="save" class="btn primary">Save</button>
+          <button id="clear" class="btn danger">Clear All</button>
+        </div>
+      </section>
+
+      <!-- Entries -->
+      <section class="entries">
+        <h2>Your Entries</h2>
+        <div id="entryList" class="list"></div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p class="muted">All data saved locally • Made with 💙</p>
+    </footer>
+
+  </div>
+
+  <script src="WAD.js"></script>
+</body>
+</html>
